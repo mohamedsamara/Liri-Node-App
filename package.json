@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/mohamedsamara/Liri-Node-App/issues"
   },
-  "homepage": "https://github.com/mohamedsamara/Liri-Node-App"
+  "homepage": "https://github.com/mohamedsamara/Liri-Node-App",
+  "dependencies": {
+    "dotenv": "^7.0.0"
+  }
 }
