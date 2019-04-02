@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/mohamedsamara/Liri-Node-App",
   "dependencies": {
-    "dotenv": "^7.0.0"
+    "axios": "^0.18.0",
+    "dotenv": "^7.0.0",
+    "jquery": "^3.3.1",
+    "jsdom": "^14.0.0",
+    "node-spotify-api": "^1.0.7"
   }
 }
