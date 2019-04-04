@@ -29,15 +29,15 @@ function getBrands() {
         '/events?app_id=codingbootcamp'
     )
     .then(function(response) {
-      for (var i = 0; i < response.data.length; i++) {
-        console.log('Name of the venue', response.data[i].venue.name);
-        console.log('Venue location', response.data[i].venue.country);
+      $.each(response.data, function(index, value) {
+        console.log('Name of the venue', value.venue.name);
+        console.log('Venue location', value.venue.country);
         console.log(
           'Date of the Event',
-          moment(response.data[i].datetime).format('MM-DD-YYYY')
+          moment(value.venue.datetime).format('MM-DD-YYYY')
         );
         console.log('\n');
-      }
+      });
     })
     .catch(function(error) {
       console.log(error);
@@ -50,19 +50,15 @@ function spotifySongs() {
     .search({ type: 'track', query: searchValue })
     .then(function(response) {
       if (response.tracks.items.length > 0) {
-        for (var i = 0; i < response.tracks.items.length; i++) {
-          for (var j = 0; j < response.tracks.items[i].artists.length; j++) {
-            console.log('artists', response.tracks.items[i].artists[j].name);
-          }
-
-          console.log('song name', response.tracks.items[i].name);
-          console.log(
-            'spotify song url',
-            response.tracks.items[i].external_urls.spotify
-          );
-          console.log('song album name', response.tracks.items[i].album.name);
+        $.each(response.tracks.items, function(index, value) {
+          $.each(value.artists, function(index, item) {
+            console.log('artists', item.name);
+          });
+          console.log('song name', value.name);
+          console.log('spotify song url', value.external_urls.spotify);
+          console.log('song album name', value.album.name);
           console.log('\n');
-        }
+        });
       } else {
         searchValue = 'The Sign';
         spotifySongs();
@@ -88,11 +84,11 @@ function getMovieInfo() {
       console.log('movie Plot', response.data.Plot);
       console.log('movie Actors', response.data.Actors);
 
-      for (var i = 0; i < response.data.Ratings.length; i++) {
-        if (response.data.Ratings[i].Source == 'Rotten Tomatoes') {
-          console.log('Rotten Tomatoes Rating', response.data.Ratings[i].Value);
+      $.each(response.data.Ratings, function(index, value) {
+        if (value.Source == 'Rotten Tomatoes') {
+          console.log('Rotten Tomatoes Rating', value.Value);
         }
-      }
+      });
     })
     .catch(function(error) {
       console.log(error);
