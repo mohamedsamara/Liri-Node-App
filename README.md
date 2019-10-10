@@ -11,7 +11,7 @@ SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language In
 Some basic Git commands are:
 
 ```
-$ git clone https://github.com/mohamedsamara/Liri-Node-App.git
+$ git clone https://github.com/mohamedsamara/liri-node-app.git
 $ cd project
 $ npm install
 
