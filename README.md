@@ -4,8 +4,6 @@
 
 SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 
-![Liri Node App](/screenshots/omdb.gif)
-
 ## Install
 
 Some basic Git commands are:
