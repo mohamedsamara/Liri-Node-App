@@ -12,7 +12,6 @@ Some basic Git commands are:
 $ git clone https://github.com/mohamedsamara/liri-node-app.git
 $ cd project
 $ npm install
-
 ```
 
 ## Languages & tools
